@@ -3,8 +3,8 @@ package com.company;
 public class ThreadR implements Runnable {
     private Resource resource;
 
-    public ThreadR(Resource r) {
-        resource = r;
+    public ThreadR(Resource resource) {
+       this.resource = resource;
     }
 
     @Override

@@ -3,8 +3,8 @@ package com.company;
 public class ThreadE extends Thread {
     private Resource resource;
 
-    public ThreadE(Resource r) {
-        resource = r;
+    public ThreadE(Resource resource) {
+        this.resource = resource;
     }
 
     @Override
