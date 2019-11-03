@@ -14,7 +14,8 @@ public class CountNumbersSumFromListRecursiveAction extends RecursiveAction {
     public void compute() {
         System.out.println("Thread " + Thread.currentThread().getName() + " started...");
         int sum = listOfNumbers.stream().mapToInt(x -> x).sum();
-        System.out.println("Result of thread (" + Thread.currentThread().getName() + ") is: " + sum);
+        System.out.println("Result of thread (" + Thread.currentThread()
+                .getName() + ") is: " + sum);
         Main.addToSum(sum);
     }
 }

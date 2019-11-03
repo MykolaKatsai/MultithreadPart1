@@ -15,14 +15,6 @@ public class Main {
 
     private volatile static int sum = 0;
 
-    public static int getSum() {
-        return sum;
-    }
-
-    public static void setSum(int sum) {
-        Main.sum = sum;
-    }
-
     public synchronized static void addToSum(int increment) {
         Main.sum += increment;
     }
@@ -35,7 +27,8 @@ public class Main {
         int bottom = 0;
         int top = ELEMENTS_PER_THREAD;
         while (top <= LIST_SIZE) {
-            executorService.submit(new CountNumbersSumFromList(listOFIntegers.subList(bottom, top)));
+            executorService.submit(new CountNumbersSumFromList(listOFIntegers
+                    .subList(bottom, top)));
             bottom = top;
             top += ELEMENTS_PER_THREAD;
         }
@@ -50,7 +43,8 @@ public class Main {
         bottom = 0;
         top = ELEMENTS_PER_THREAD;
         while (top <= LIST_SIZE) {
-            forkJoinPool.submit(new CountNumbersSumFromListRecursiveAction(listOFIntegers.subList(bottom, top)));
+            forkJoinPool.submit(new CountNumbersSumFromListRecursiveAction(listOFIntegers
+                    .subList(bottom, top)));
             bottom = top;
             top += ELEMENTS_PER_THREAD;
         }

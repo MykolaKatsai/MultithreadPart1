@@ -1,7 +1,6 @@
 package com.company.multithread2;
 
 import java.util.List;
-import java.util.concurrent.Callable;
 
 public class CountNumbersSumFromList implements Runnable {
         private List<Integer> listOfNumbers;
